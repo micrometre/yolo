@@ -15,8 +15,8 @@ class Config:
     ocr_confidence: float = 0.5
     process_every_n_frames: int = 1
     target_fps: int = 20
-    video_path: str = '/home/ubuntu/Videos/alprVideo2.mp4'
-    model_path: str = '../models/best4.pt'
+    video_path: str = '/home/ubuntu/Videos/alprVideo.mp4'
+    model_path: str = 'models/best4.pt'
 
 class LicensePlateDetector:
     def __init__(self, config: Config):

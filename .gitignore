@@ -14,3 +14,5 @@ build/
 *~
 *.jpg
 *.log
+*.json
+*.avi

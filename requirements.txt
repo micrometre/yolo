@@ -6,3 +6,5 @@ opencv-python-headless
 ultralytics
 easyocr 
 Pillow 
+paddleocr 
+paddlepaddle

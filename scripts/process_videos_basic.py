@@ -8,13 +8,17 @@ from datetime import datetime
 
 # Input video path
 # read in video paths
-videos = glob.glob('videos/*.mp4')
-print(videos)
+VIDEO_PATH = 'videos/alpr.mp4'  # Change this to your video file name
 # pick pre-trained model
 model_pretrained = YOLO('models/best.pt')
 
 # read video by index
-video = cv.VideoCapture(videos[1])
+video = cv.VideoCapture(VIDEO_PATH)
+
+if not video.isOpened():
+    raise ValueError(f"Error: Could not open video file {VIDEO_PATH}")
+
+
 
 # get video dims
 frame_width = int(video.get(3))

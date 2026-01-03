@@ -14,7 +14,7 @@ coco_model = YOLO('models/yolov8s.pt')  # Vehicle detection
 np_model = YOLO('models/best4.pt')      # License plate detection
 
 # Video setup
-video_path = os.path.expanduser('~/Videos/alprVideo.mp4')
+video_path = os.path.expanduser('videos/alpr.mp4')
 video = cv2.VideoCapture(video_path)
 if not video.isOpened():
     raise ValueError(f"Could not open video: {video_path}")
@@ -87,7 +87,6 @@ while True:
                 
                 if plate_score > MIN_PLATE_SCORE:
                     plate_img = roi[int(plate_y1):int(plate_y2), int(plate_x1):int(plate_x2)]
-                    
                     if plate_img.size > 0:
                         plate_filename = f"{output_dir}/plate_{track_id}_{frame_number}_{i}.jpg"
                         cv2.imwrite(plate_filename, plate_img)
